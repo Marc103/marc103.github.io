@@ -554,14 +554,14 @@ body {
       rgba(10, 10, 10, 0.4),
       rgb(10, 10, 10, 0.4)
     ),
-    url("mem_instrs.png");
+    url("mem_instrs_blur.png");
   --background-background: #fff;
 }
 
 .background-box {
   height: 100%;
   width: 100%;
-  background-image: url('square.png');
+  background-image: url('square_blur_100_15.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
