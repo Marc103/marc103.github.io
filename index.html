@@ -139,6 +139,7 @@
         }
         for (var i = 0; i < blog.length; i++) {
           $("#blogs").append(`
+            <div class='inline-block-child'>
             <a href="./blog/${blog[i].url_title}/" target="_blank">
                 <section style="background-color: white;">
                     <img src="./blog/${blog[i].url_title}/${blog[i].top_image}">
@@ -150,6 +151,7 @@
                     </div>
                 </section>
             </a>
+            </div>
             `);
         }
       }).fail(function() {

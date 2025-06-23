@@ -571,4 +571,9 @@ body {
   justify-content: center;
 }
 
+.inline-block-child {
+  display: inline-block;
+  float: left;
+}
+
 
