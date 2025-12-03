@@ -375,8 +375,17 @@ body {
   padding: 2vh 0px !important;
 }
 
+/* ❌ remove the old columns line
 #blogs {
   columns: 2;
+}
+*/
+
+/* ✅ use CSS grid instead */
+#blogs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));  /* 2 columns */
+  gap: 2.5vh 2vw;  /* spacing between cards */
 }
 
 #blog_title {
@@ -390,7 +399,7 @@ body {
 
 #blogs section {
   width: 100%;
-  display: inline-block;
+  display: block;         /* no need for inline-block in grid */
   border-radius: 5px;
   color: var(--text-color);
   border: 1px solid rgb(0, 0, 0, 0.04);
@@ -398,7 +407,7 @@ body {
   transition: 0.4s ease-in-out;
   transform: scale(1);
   padding: 0px;
-  margin: 2vh 0px;
+  margin: 0;              /* grid gap handles spacing now */
 }
 
 #blogs section img {
@@ -416,6 +425,7 @@ body {
   box-shadow: 0px 15px 35px rgb(0, 0, 0, 0.06);
   transform: scale(1.03);
 }
+
 
 .go_back {
   position: absolute;
@@ -546,34 +556,53 @@ body {
   background: var(--text-color);
 }
 :root {
-  --bg-color: #fff;
-  --text-color: rgb(10, 10, 10);
-  --blog-gray-color: rgb(80, 80, 80);
+  --bg-color: rgb(10, 10, 10);
+  --text-color: #fff;
+  --blog-gray-color: rgb(180, 180, 180);
   --background-image: linear-gradient(
       90deg,
-      rgba(10, 10, 10, 0.4),
-      rgb(10, 10, 10, 0.4)
+      rgba(10, 10, 10, 0.3),
+      rgb(10, 10, 10, 1)
     ),
-    url("mem_instrs_blur.png");
-  --background-background: #fff;
+    url("./landing.jpg");
+  --background-background: linear-gradient(
+      0deg,
+      rgba(10, 10, 10, 1),
+      rgba(10, 10, 10, 0.6)
+    ),
+    url("./landing.jpg") center center fixed;
+  --height: 50vh;
 }
 
-.background-box {
-  height: 100%;
-  width: 100%;
-  background-image: url('square_blur_100_15.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+#display h1 {
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: #fff;
 }
 
-.inline-block-child {
-  display: inline-block;
-  float: left;
+#blog-display h1 {
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: #fff;
+}
+
+.projects section {
+  background: rgb(20, 20, 20);
+}
+
+#blog_section section {
+  background: rgb(20, 20, 20);
+}
+
+@media (max-width: 800px) {
+  :root {
+    --background-image: linear-gradient(
+        0deg,
+        rgba(10, 10, 10, 1),
+        rgba(10, 10, 10, 0)
+      ),
+      url("./landing.jpg") !important;
+  }
 }
 
 

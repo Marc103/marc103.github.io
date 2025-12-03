@@ -1,15 +1,18 @@
 [
  {
   "username": "Marc103",
-  "name": null,
+  "name": "Marcos Ferreira",
   "userimg": "https://avatars.githubusercontent.com/u/78170299?v=4",
   "sort": "created",
-  "order": "asc",
+  "order": "desc",
   "includeFork": false,
-  "theme": "light.css",
+  "theme": "dark.css",
   "types": [
-   "all"
+   "owner"
   ],
-  "linkedin": "https://www.linkedin.com/in/marc103/"
+  "linkedin": null,
+  "twitter": null,
+  "medium": null,
+  "dribbble": null
  }
 ]

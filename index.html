@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="index.css">
   <link rel="icon" href="https://avatars.githubusercontent.com/u/78170299?v=4" type="image/png"></head>
 
-  <body style="background-color:lightgray">
+  <body>
     <div id="loading">
       <div id="spinner"></div>
     </div>
@@ -32,86 +32,58 @@
                 </div>
                 </div>
     </div>
-    <div class="background-box" id="display">
+    <div id="display">
       <div id="blog_section">
-        <h1 style="background-color: rgb(255, 255, 255); 
-                   color: black;
-                   border-radius: 25px; padding-top: 10px;
-                   padding-bottom: 10px;
-                   text-align: center;">Marcos Ferreira</h1>
-        <div id="blogs"></div>
+        <div id="blogs">
+
+        </div>
       </div>
       <div id="work">
         <div class="projects" id="work_section">
+                        <a href="https://github.com/Marc103/Floating-Point-Image-Processing-SV-RTL" target="_blank">
+                        <section>
+                            <div class="section_title">Floating-Point-Image-Processing-SV-RTL</div>
+                            <div class="about_section">
+                            <span style="display:block;">Image processing modules done in custom area efficient floating point.</span>
+                            </div>
+                            <div class="bottom_section">
+                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; SystemVerilog</span>
+                            </div>
+                        </section>
+                        </a>
                         <a href="https://github.com/Marc103/Image-Processing-SV-RTL" target="_blank">
-                        <section style="background-color: white;">
+                        <section>
                             <div class="section_title">Image-Processing-SV-RTL</div>
                             <div class="about_section">
-                            <span style="display:block;">Features a Convolution Filter and Bilinear interpolator written and tested in System Verilog, using adjustable Fixed Pointed Arithmetic..</span>
+                            <span style="display:block;">Features a Convolution Filter and Bilinear interpolator written and tested in System Verilog, using adjustable Fixed Pointed Arithmetic.</span>
                             </div>
                             <div class="bottom_section">
                                 <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; SystemVerilog</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 0</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
                             </div>
                         </section>
                         </a>
-
                         <a href="https://github.com/Marc103/OV7670-with-FPGA-and-Demosaicing" target="_blank">
-                        <section style="background-color: white;">
+                        <section>
                             <div class="section_title">OV7670-with-FPGA-and-Demosaicing</div>
                             <div class="about_section">
-                            <span style="display:none;">undefined</span>
+                            <span style="display:block;">Interfacing with the OV7670 camera, demosaicing and outputting to VGA display</span>
                             </div>
                             <div class="bottom_section">
                                 <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; SystemVerilog</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 1</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
                             </div>
                         </section>
                         </a>
-                        
                         <a href="https://github.com/Marc103/LC-3-Verilog-Implementation" target="_blank">
-                        <section style="background-color: white;">
+                        <section>
                             <div class="section_title">LC-3-Verilog-Implementation</div>
                             <div class="about_section">
-                            <span style="display:block;">I will be implementing the LC-3 ISA specifications in verilog.</span>
+                            <span style="display:block;">Implemented the LC-3 ISA specifications in verilog.</span>
                             </div>
                             <div class="bottom_section">
                                 <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; Verilog</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 4</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
                             </div>
                         </section>
-                        </a>
-
-                        <a href="https://github.com/Marc103/Floating-Point-Utilities-Chisel" target="_blank">
-                        <section style="background-color: white;">
-                            <div class="section_title">Floating-Point-Utilities-Chisel</div>
-                            <div class="about_section">
-                            <span style="display:block;">Parameterized Floating Pointer Adder, Multiplier and Divider, written using Chisel DSL.</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; Chisel</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 0</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a>
-
-                        <a href="https://github.com/Marc103/RV32IM-zicsr-SV-Implementation" target="_blank">
-                        <section style="background-color: white;">
-                            <div class="section_title">RV32IM-zicsr-SV-Implementation</div>
-                            <div class="about_section">
-                            <span style="display:none;">undefined</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; SystemVerilog</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 1</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-        </div>
+                        </a></div>
       </div>
       <div id="forks" style="display:none;">
         <h1>Forks.</h1>
@@ -139,9 +111,8 @@
         }
         for (var i = 0; i < blog.length; i++) {
           $("#blogs").append(`
-            <div class='inline-block-child'>
             <a href="./blog/${blog[i].url_title}/" target="_blank">
-                <section style="background-color: white;">
+                <section>
                     <img src="./blog/${blog[i].url_title}/${blog[i].top_image}">
                     <div class="blog_container">
                         <div class="section_title">${blog[i].title}</div>
@@ -151,9 +122,27 @@
                     </div>
                 </section>
             </a>
-            </div>
             `);
         }
+        $("#blogs").append(`
+          <a href="https://github.com/Marc103/High-Performance-Logic-Store-SV-RTL" target="_blank">
+          <section>
+          <div class="blog_container">
+          <div class="section_title">High-Performance-Logic-Store-SV-RTL</div>
+          <div class="about_section">
+          <span style="display:block;">
+            This is my open IP store of High Performance System Verilog RTL. In the works
+          </span>
+          </div>
+          <div class="bottom_section">
+          <span style="display:inline-block;">
+            <i class="fas fa-code"></i>&nbsp; SystemVerilog
+          </span>
+          </div>
+          </div>
+          </section>
+          </a>
+        `);
       }).fail(function() {
         return (document.getElementById("blog_section").style.display = "none");
       });

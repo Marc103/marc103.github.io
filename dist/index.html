@@ -1,0 +1,179 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Marc103</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/magic-grid/dist/magic-grid.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+  <link rel="icon" href="https://avatars.githubusercontent.com/u/78170299?v=4" type="image/png"></head>
+
+  <body>
+    <div id="loading">
+      <div id="spinner"></div>
+    </div>
+    <div id="profile">
+      <div id="profile_img" style="background: url(https://avatars.githubusercontent.com/u/78170299?v=4) center;"></div>
+      <div id="username"><span style="display:none;">null</span><a href="https://github.com/Marc103">@Marc103</a></div>
+      <div id="username3"><span style="display:none;">null</span><a href="">@Northwestern University</a></div>
+      <div id="username2"><span style="display:none;">null</span><a href="https://www.alexander.vision/">@BiV</a></div>
+      <div id="userbio" style="display: none;">undefined</div>
+      <div id="about">
+                <span style="display:none;"><i class="fas fa-users"></i> &nbsp; null</span>
+                <span style="display:block;"><i class="fas fa-envelope"></i> &nbsp; mferreira103301@gmail.com</span>
+                <span style="display:block;"><i class="fas fa-link"></i> &nbsp;<a href="https://marc103.github.io/">https://marc103.github.io/</a></span>
+                <span style="display:block;"><i class="fas fa-map-marker-alt"></i> &nbsp;&nbsp; Chicago</span>
+                <span style="display:block;"><i class="fas fa-user-tie"></i> &nbsp;&nbsp; Available for hire</span>
+                <span style="display:block;"><i class="fas fa-file"></i> &nbsp;<a href="cv.pdf">CV</a></span>
+                <div class="socials">
+                <span style="display:block;"><a href="https://www.linkedin.com/in/marc103" target="_blank" class="socials"><i class="fab fa-linkedin-in"></i></a></span>
+                </div>
+                </div>
+    </div>
+    <div id="display">
+      <div id="blog_section">
+        <div id="blogs">
+
+        </div>
+      </div>
+      <div id="work">
+        <div class="projects" id="work_section">
+                        <a href="https://github.com/Marc103/Floating-Point-Image-Processing-SV-RTL" target="_blank">
+                        <section>
+                            <div class="section_title">Floating-Point-Image-Processing-SV-RTL</div>
+                            <div class="about_section">
+                            <span style="display:block;">Image processing modules done in custom area efficient floating point.</span>
+                            </div>
+                            <div class="bottom_section">
+                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; SystemVerilog</span>
+                            </div>
+                        </section>
+                        </a>
+                        <a href="https://github.com/Marc103/Image-Processing-SV-RTL" target="_blank">
+                        <section>
+                            <div class="section_title">Image-Processing-SV-RTL</div>
+                            <div class="about_section">
+                            <span style="display:block;">Features a Convolution Filter and Bilinear interpolator written and tested in System Verilog, using adjustable Fixed Pointed Arithmetic.</span>
+                            </div>
+                            <div class="bottom_section">
+                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; SystemVerilog</span>
+                            </div>
+                        </section>
+                        </a>
+                        <a href="https://github.com/Marc103/OV7670-with-FPGA-and-Demosaicing" target="_blank">
+                        <section>
+                            <div class="section_title">OV7670-with-FPGA-and-Demosaicing</div>
+                            <div class="about_section">
+                            <span style="display:block;">Interfacing with the OV7670 camera, demosaicing and outputting to VGA display</span>
+                            </div>
+                            <div class="bottom_section">
+                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; SystemVerilog</span>
+                            </div>
+                        </section>
+                        </a>
+                        <a href="https://github.com/Marc103/LC-3-Verilog-Implementation" target="_blank">
+                        <section>
+                            <div class="section_title">LC-3-Verilog-Implementation</div>
+                            <div class="about_section">
+                            <span style="display:block;">Implemented the LC-3 ISA specifications in verilog.</span>
+                            </div>
+                            <div class="bottom_section">
+                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; Verilog</span>
+                            </div>
+                        </section>
+                        </a></div>
+      </div>
+      <div id="forks" style="display:none;">
+        <h1>Forks.</h1>
+        <div class="projects" id="forks_section"></div>
+      </div>
+      <div id="footer">
+        <a href="https://github.com/imfunniee" target="_blank">made on earth by a human</a>
+      </div>
+    </div>
+    <script type="text/javascript">
+      setTimeout(function() {
+        document.getElementById("loading").classList.add("animated");
+        document.getElementById("loading").classList.add("fadeOut");
+        setTimeout(function() {
+          document.getElementById("loading").classList.remove("animated");
+          document.getElementById("loading").classList.remove("fadeOut");
+          document.getElementById("loading").style.display = "none";
+        }, 800);
+      }, 1500);
+      $.getJSON("blog.json", function(blog) {
+        blog = blog || [];
+        if (blog.length == 0) {
+          return (document.getElementById("blog_section").style.display =
+            "none");
+        }
+        for (var i = 0; i < blog.length; i++) {
+          $("#blogs").append(`
+            <a href="./blog/${blog[i].url_title}/" target="_blank">
+                <section>
+                    <img src="./blog/${blog[i].url_title}/${blog[i].top_image}">
+                    <div class="blog_container">
+                        <div class="section_title">${blog[i].title}</div>
+                        <div class="about_section">
+                            ${blog[i].sub_title}
+                        </div>
+                    </div>
+                </section>
+            </a>
+            `);
+        }
+        $("#blogs").append(`
+          <a href="https://github.com/Marc103/High-Performance-Logic-Store-SV-RTL" target="_blank">
+          <section>
+          <div class="blog_container">
+          <div class="section_title">High-Performance-Logic-Store-SV-RTL</div>
+          <div class="about_section">
+          <span style="display:block;">
+            This is my open IP store of High Performance System Verilog RTL. In the works
+          </span>
+          </div>
+          <div class="bottom_section">
+          <span style="display:inline-block;">
+            <i class="fas fa-code"></i>&nbsp; SystemVerilog
+          </span>
+          </div>
+          </div>
+          </section>
+          </a>
+        `);
+      }).fail(function() {
+        return (document.getElementById("blog_section").style.display = "none");
+      });
+    </script>
+
+    <script>
+      const magicProjectsGrid = new MagicGrid({
+        container: "#work_section",
+        animate: false,
+        gutter: 30, // default gutter size
+        static: true,
+        useMin: false,
+        maxColumns: 2,
+        useTransform: true
+      });
+
+      const magicForksGrid = new MagicGrid({
+        container: "#forks_section",
+        animate: false,
+        gutter: 30, // default gutter size
+        static: true,
+        useMin: false,
+        maxColumns: 2,
+        useTransform: true
+      });
+
+      $("document").ready(() => {
+        magicProjectsGrid.listen();
+        magicForksGrid.listen();
+      });
+    </script>
+  
+
+</body></html>
